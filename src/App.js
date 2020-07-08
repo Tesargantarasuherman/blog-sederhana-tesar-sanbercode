@@ -24,10 +24,6 @@ const App =()=> {
   }
 
   const hapusPost = (id)=>{
-    Axios.delete(`http://localhost:3004/posts/${id}`).then((res)=>{
-      setBlog(blogs) 
-          console.log(res.data)
-    })
     setBlog(blogs.filter(blog=>blog.id !== id))
   }
   const editPost = (blog) => {
@@ -38,10 +34,6 @@ const App =()=> {
     setEditing(false)
     setBlog(blogs.map(blog => (blog.id === id ? updatedBlog : blog)))
   }
-  // Axios
-  useEffect(() => {
-    setBlog(isiBlog)
-  })
   return (
     <div className="row">
       <div className="col-md-6">
